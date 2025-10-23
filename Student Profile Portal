@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Portal</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+           <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* CSS for alternating table row colors (as required) */
+        #profileTableBody tr:nth-child(even) {
+            background-color: #f9fafb; /* Tailwind's gray-50 */
+        }
+    </style>
+
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen text-gray-800 p-4 sm:p-8">
+  
+    <div class="container mx-auto max-w-4xl">
+       
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-indigo-700">Student Profile Portal</h1>
+        </header>
+
+        <main class="space-y-12">
+                        
+            <section id="registration-form" class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-700">Register New Student</h2>
+                
+                <form id="profileForm" class="space-y-6">
+                  
+                       <div>
+                        <label for="studentName" class="block text-sm font-medium text-gray-700 mb-1">Student Name</label>
+                        <input type="text" id="studentName" name="studentName" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+
+                    <div>
+                        <label for="rollNumber" class="block text-sm font-medium text-gray-700 mb-1">Roll Number</label>
+                        <input type="number" id="rollNumber" name="rollNumber" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                   
+                    <div>
+                        <label for="department" class="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                        <select id="department" name="department" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="" disabled selected>Select your department</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="EE">Electrical Engineering</option>
+                            <option value="ME">Mechanical Engineering</option>
+                            <option value="CE">Civil Engineering</option>
+                            <option value="BIO">Biology</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    
+                    <fieldset>
+                        <legend class="block text-sm font-medium text-gray-700 mb-2">Gender</legend>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="male" name="gender" value="Male" required
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="male" class="ml-2 block text-sm text-gray-900">Male</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="female" name="gender" value="Female"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="female" class="ml-2 block text-sm text-gray-900">Female</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="other" name="gender" value="Other"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="other" class="ml-2 block text-sm text-gray-900">Other</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                        <fieldset>
+                        <legend class="block text-sm font-medium text-gray-700 mb-2">Skills</legend>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="html" name="skills" value="HTML"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="html" class="ml-2 block text-sm text-gray-900">HTML</Flabel>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="css" name="skills" value="CSS"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="css" class="ml-2 block text-sm text-gray-900">CSS</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="js" name="skills" value="JavaScript"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="js" class="ml-2 block text-sm text-gray-900">JavaScript</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="python" name="skills" value="Python"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="python" class="ml-2 block text-sm text-gray-900">Python</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="java" name="skills" value="Java"
+                                       class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                                <label for="java" class="ml-2 block text-sm text-gray-900">Java</Dlabel>
+                            </div>
+                        </div>
+                    </fieldset>
+                     <div>
+                        <label for="aboutMe" class="block text-sm font-medium text-gray-700 mb-1">About Me</label>
+                        <textarea id="aboutMe" name="aboutMe" rows="3"
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                  placeholder="Write a short bio..."></textarea>
+                    </div>
+                                      
+                    <div>
+                        <button type="submit"
+                                class="w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-200">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </section>
+                        
+            <section id="profile-table" class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-700">Student Profiles</h2>
+                                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Roll</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Department</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Skills</th>
+                            </tr>
+                        </thead>
+                        <tbody id="profileTableBody" class="bg-white divide-y divide-gray-200">
+                                                                                   <tr class="hover:bg-gray-100 transition-colors duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">101</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Alice Smith</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">CS</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">alice@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">HTML, CSS, JS</td>
+                            </tr>
+                                                        
+                            <tr class="hover:bg-gray-100 transition-colors duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">102</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bob Johnson</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">ME</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">bob@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Python</td>
+                            </tr>
+                                                        
+                            <tr class="hover:bg-gray-100 transition-colors duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">103</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Carol Williams</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">EE</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">carol@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Java, JavaScript</td>
+                            </tr>
+                            
+                             </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const roll = document.getElementById('rollNumber').value;
+            const name = document.getElementById('studentName').value;
+            const department = document.getElementById('department').value;
+            const email = document.getElementById('email').value;
+            
+            const skillsCheckboxes = document.querySelectorAll('input[name="skills"]:checked');
+            const skills = Array.from(skillsCheckboxes).map(cb => cb.value).join(', ');
+            
+            const tableBody = document.getElementById('profileTableBody');
+            
+            const newRow = tableBody.insertRow();
+            newRow.className = "hover:bg-gray-100 transition-colors duration-150"; 
+            
+            newRow.insertCell(0).textContent = roll;
+            newRow.insertCell(1).textContent = name;
+            newRow.insertCell(2).textContent = department;
+            newRow.insertCell(3).textContent = email;
+            newRow.insertCell(4).textContent = skills || 'N/A';
+                        
+            for (let i = 0; i < 5; i++) {
+                newRow.cells[i].className = "px-6 py-4 whitespace-nowrap text-sm text-gray-700";
+                if (i === 0) {
+                    newRow.cells[i].className += " font-medium text-gray-900"; 
+                }
+            }
+            
+            event.target.reset();
+        });
+    </script>
+
+</body>
+</html>
+ 
